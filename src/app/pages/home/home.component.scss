@@ -1,11 +1,70 @@
+.home__wrapper{
 
+    display: flex;
+
+    img{
+        height: 50%;
+        width: 50%;
+    }
+}
 .upload__card {
+
     width: 600px;
-    margin-top: -365px !important;
     height: 200px;
     border-radius: 2rem;
-    justify-content: center impo;
+    justify-content: center;
+    align-items: center;
     margin: auto;
-    background-color: whitesmoke
+    background-color: whitesmoke;
+
+    .cloud_text{
+
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        display: flex;
+    }
+    .upload_img{
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        display: flex;
+    }
+    .upload_button{
+        position: relative;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        display: flex;
+        .btn {
+            border: 2px solid gray;
+            color: gray;
+            background-color: white;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+          
+    }
+
+    .upload_button input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
+
+    .upload_icon{
+        height: 100px;
+        width: 100px;
+    }
+
+}
+.__text{
+    color: rgb(0, 195, 255);
+
 }
 

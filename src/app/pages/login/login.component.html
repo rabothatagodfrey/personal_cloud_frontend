@@ -1,88 +1,92 @@
-<div class="container">
-  <input type="checkbox" id="flip">
-  <div class="cover">
-    <div class="front">
-      <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-cloud-cloud-data-technology-and-network-technology-flatart-icons-flat-flatarticons-2.png"/>
-      <!--<img src="images/frontImg.jpg" alt="">-->
-      <div class="text" *ngIf="upenSignUp">
-        <span class="text-1">Every new friend is a <br> new adventure</span>
-        <span class="text-2">Let's get connected</span>
+<div class="login__wrapper">
+
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
+      <div class="front">
+        <img src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-cloud-cloud-data-technology-and-network-technology-flatart-icons-flat-flatarticons-2.png"/>
+        <!--<img src="images/frontImg.jpg" alt="">-->
+        <div class="text" *ngIf="upenSignUp">
+          <span class="text-1">Every new friend is a <br> new adventure</span>
+          <span class="text-2">Let's get connected</span>
+        </div>
+      </div>
+      <div class="back">
+        <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
+        <div class="text" >
+          <span class="text-1">Complete miles of journey <br> with one step</span>
+          <span class="text-2">Let's get started</span>
+        </div>
       </div>
     </div>
-    <div class="back">
-      <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
-      <div class="text" >
-        <span class="text-1">Complete miles of journey <br> with one step</span>
-        <span class="text-2">Let's get started</span>
+    <div class="forms">
+        <div class="form-content">
+          <div class="login-form" >
+            <div class="title">Login</div>
+          <form [formGroup]="loginForm" >
+            <div class="input-boxes">
+  
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" formControlName="email" placeholder="Enter your email" required>
+              </div>
+  
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" formControlName="password" placeholder="Enter your password" required>
+              </div>
+  
+              <div class="text"><a href="#">Forgot password?</a></div>
+  
+              <div class="button input-box">
+                <input type="submit" [disabled]="!loginForm.valid" value="Sumbit" (click)="login(loginForm)">
+              </div>
+  
+              <div class="text sign-up-text">Don't have an account? <label for="flip" (click)='openClick()'>Sigup now</label></div>
+            </div>
+        </form>
       </div>
-    </div>
-  </div>
-  <div class="forms">
-      <div class="form-content">
-        <div class="login-form" >
-          <div class="title">Login</div>
-        <form [formGroup]="loginForm" >
-          <div class="input-boxes">
-
-            <div class="input-box">
-              <i class="fas fa-envelope"></i>
-              <input type="text" formControlName="email" placeholder="Enter your email" required>
+        <div class="signup-form">
+          <div class="title">Signup</div>
+        <form  [formGroup]="registerForm">
+            <div class="input-boxes">
+              
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" formControlName="name" placeholder="Enter your full name" required>
+              </div>
+  
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" formControlName="email" placeholder="Enter your email" required>
+              </div>
+  
+              <div class="input-box">
+                <i class="fas fa-phone"></i>
+                <input type="text" formControlName="phone" placeholder="Enter your Phone Number" required>
+              </div>
+  
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" formControlName="password" placeholder="Enter your password" required>
+              </div>
+  
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" formControlName="confirm_password" placeholder="Confirm your password" required>
+              </div>
+  
+              <div class="button input-box">
+                <input type="submit" value="Sumbit" (click)="register()">
+              </div>
+  
+              <div class="text sign-up-text">Already have an account? <label for="flip"  (click)='openClick()'>Login now</label></div>
             </div>
-
-            <div class="input-box">
-              <i class="fas fa-lock"></i>
-              <input type="password" formControlName="password" placeholder="Enter your password" required>
-            </div>
-
-            <div class="text"><a href="#">Forgot password?</a></div>
-
-            <div class="button input-box">
-              <input type="submit" [disabled]="!loginForm.valid" value="Sumbit" (click)="login(loginForm)">
-            </div>
-
-            <div class="text sign-up-text">Don't have an account? <label for="flip" (click)='openClick()'>Sigup now</label></div>
-          </div>
       </form>
     </div>
-      <div class="signup-form">
-        <div class="title">Signup</div>
-      <form  [formGroup]="registerForm">
-          <div class="input-boxes">
-            
-            <div class="input-box">
-              <i class="fas fa-user"></i>
-              <input type="text" formControlName="name" placeholder="Enter your full name" required>
-            </div>
-
-            <div class="input-box">
-              <i class="fas fa-envelope"></i>
-              <input type="text" formControlName="email" placeholder="Enter your email" required>
-            </div>
-
-            <div class="input-box">
-              <i class="fas fa-phone"></i>
-              <input type="text" formControlName="phone" placeholder="Enter your Phone Number" required>
-            </div>
-
-            <div class="input-box">
-              <i class="fas fa-lock"></i>
-              <input type="password" formControlName="password" placeholder="Enter your password" required>
-            </div>
-
-            <div class="input-box">
-              <i class="fas fa-lock"></i>
-              <input type="password" formControlName="confirm_password" placeholder="Confirm your password" required>
-            </div>
-
-            <div class="button input-box">
-              <input type="submit" value="Sumbit" (click)="register()">
-            </div>
-
-            <div class="text sign-up-text">Already have an account? <label for="flip"  (click)='openClick()'>Login now</label></div>
-          </div>
-    </form>
+    </div>
+    </div>
   </div>
-  </div>
-  </div>
+  
 </div>
 
